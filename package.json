@@ -1,0 +1,54 @@
+{
+  "name": "vestige-re",
+  "version": "0.1.1",
+  "description": "Vestige: evidence-driven reverse engineering platform for AI agents \u2014 MCP server, CLI, and verifiable analysis provenance.",
+  "license": "MIT",
+  "author": "Vestige contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vestige-re/vestige.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "bin": {
+    "vestige": "./dist/cli/main.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:security": "vitest run tests/security",
+    "test:regression": "vitest run tests/regression",
+    "test:e2e": "vitest run tests/e2e",
+    "bench": "node scripts/benchmarks/run-benchmarks.mjs",
+    "bench:record": "node scripts/benchmarks/run-benchmarks.mjs --write",
+    "start": "node dist/server/main.js",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@modelcontextprotocol/server": "2.4.0",
+    "acorn": "8.19.0",
+    "acorn-walk": "8.3.4",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.2",
+    "@types/node": "24.10.4",
+    "eslint": "9.39.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.54.0",
+    "vitest": "5.0.5"
+  }
+}

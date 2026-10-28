@@ -1,0 +1,53 @@
+name: Bug report
+description: Report incorrect behavior or analysis results
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include exact commands and, for analysis issues, the finding/evidence IDs.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: If you know the ground truth for the artifact, state it — it may become a regression fixture.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Vestige version
+      placeholder: output of `node dist/cli/main.js version`
+    validations:
+      required: true
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Provider involved
+      options:
+        - javascript
+        - native
+        - ghidra
+        - mcp-server
+        - cli
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Node version (`node --version`), provider versions if relevant.
+    validations:
+      required: true
+  - type: checkboxes
+    id: authorization
+    attributes:
+      label: Authorization confirmation
+      description: Do not attach proprietary artifacts you are not allowed to share.
+      options:
+        - label: I am authorized to analyze the artifact(s) involved
+          required: true

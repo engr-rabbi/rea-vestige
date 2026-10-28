@@ -1,0 +1,26 @@
+name: Feature / provider request
+description: Propose a new capability, provider, or improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What analysis question cannot be answered today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed capability
+      description: Include which provider would own it and what evidence it would produce.
+  - type: checkboxes
+    id: honesty
+    attributes:
+      label: Feasibility honesty
+      description: Vestige only ships capabilities that are demonstrated by tests.
+      options:
+        - label: I can propose a deterministic fixture + ground truth to validate this
+          required: false
+        - label: This requires an external tool (state which and its license)
+          required: false

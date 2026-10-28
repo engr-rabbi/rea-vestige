@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-10-28T06:32:35.214Z",
+  "node": "v24.22.1",
+  "platform": "linux/x64",
+  "note": "Numbers below were produced by an actual run of scripts/benchmarks/run-benchmarks.mjs against deterministic fixtures with embedded ground truth. Precision = TP/(TP+FP) on exact identifier match; recall = TP/(TP+FN); FPR = FP/(TP+FP).",
+  "benchmarks": [
+    {
+      "name": "native: ELF64 symbol extraction",
+      "fixture": "synthetic ELF64 executable (4 known symbols, .symtab)",
+      "iterations": 200,
+      "metrics": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1,
+        "recall": 1,
+        "fpr": 0
+      },
+      "latency": {
+        "meanMs": 0.027971924999998947,
+        "maxMs": 1.513970999999998
+      }
+    },
+    {
+      "name": "javascript: module graph + Electron IPC + routes",
+      "fixture": "synthetic Electron app (3 sources, manifest, 3 IPC + 3 routes)",
+      "iterations": 20,
+      "metrics": {
+        "imports": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "fpr": 0
+        },
+        "ipcChannels": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "fpr": 0
+        },
+        "routes": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "fpr": 0
+        }
+      },
+      "latency": {
+        "meanMs": 3.980493099999998,
+        "maxMs": 21.082302999999996
+      },
+      "evidenceLinked": {
+        "findingsTotal": 22,
+        "findingsWithEvidence": 22,
+        "evidenceRecords": 17
+      }
+    }
+  ]
+}
